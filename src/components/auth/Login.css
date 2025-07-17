@@ -1,0 +1,140 @@
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Added styles for centering */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+}
+
+.login-box {
+  width: 100%;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-group label {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.input-group input {
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #00f2fe;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 242, 254, 0.4);
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #bbb;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: -10px;
+  text-align: left;
+}
+
+.submit-btn {
+  padding: 15px;
+  background: #00f2fe;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 242, 254, 0.2);
+}
+
+.submit-btn:disabled {
+  background: #b1e6f9;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover {
+  background: #4facfe;
+  transform: translateY(-3px);
+}
+
+.submit-btn:active {
+  transform: translateY(2px);
+}
+
+.register-link {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.register-text {
+  color: #00f2fe;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.register-text:hover {
+  color: #4facfe;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 25px;
+  }
+
+  .login-title {
+    font-size: 2rem;
+  }
+
+  .input-group input {
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    font-size: 1.1rem;
+  }
+}
