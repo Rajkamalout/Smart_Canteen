@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Headers from "./components/Headers";
 import Home from "./components/Home";
@@ -6,14 +6,22 @@ import CartDetails from "./components/CartDetails";
 import Sucess from "./components/Sucess";
 import Cancell from "./components/Cancell";
 import Login from "./components/auth/Login";
-import Register from "./components/auth/Register"; // Assuming you have a Register component
+import Register from "./components/auth/Register";
 import { Toaster } from "react-hot-toast";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  // Check if user is logged in by verifying localStorage
-  const isLoggedIn = localStorage.getItem("idToken");
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("idToken"));
+
+  // whenever localStorage changes, update state
+  useEffect(() => {
+    const checkLogin = () => {
+      setIsLoggedIn(!!localStorage.getItem("idToken"));
+    };
+    window.addEventListener("storage", checkLogin);
+    return () => window.removeEventListener("storage", checkLogin);
+  }, []);
 
   return (
     <>
